@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import contactsOperations from '../../redux/contacts/operation';
 import contactsSelector from '../../redux/contacts/selectors';
 
-
 import Form from '../Form';
 import Filter from '../Filter';
 import Contacts from '../Contacts';
@@ -19,7 +18,7 @@ export default function Phonebook() {
     }, [dispatch]);
 
     return (
-        <div style={styles.bar}>
+        <div className={styles.bar}>
             <h1>Phonebook</h1>
             <Form />
 

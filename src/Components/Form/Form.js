@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getContacts } from "../../redux/selectors";
-import { addContact } from '../../redux/operation';
-import styles from './Form.module.css';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import contactsOperations from '../../redux/contacts/operation';
+import contactsSelectors from '../../redux/contacts/selectors';
+import style from './Form.module.css'
 
-export default function Form () {
+export default function Form() {
     const dispatch = useDispatch();
-    const contacts = useSelector(getContacts);
+    const contacts = useSelector(contactsSelectors.getContacts);
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     
+    // console.log(contacts);
 
     const handleChange = event => {
         const { name, value } = event.currentTarget;
@@ -36,20 +37,20 @@ export default function Form () {
         }
 
         if (contacts.map(contact => contact.name).includes(name)) {
-            alert(`${name} is already in contacs.`)
+            return alert(`${name} is already in contacs.`)
         }
 
-        dispatch(addContact({ name, number }));
+        dispatch(contactsOperations.addContact({ name, number }));
         setName('');
         setNumber('');
     };
     
         return (
-            <form className={styles.form} onSubmit={hadleSubmit}>
-                <label className={styles.label}>
+            <form className={style.form} onSubmit={hadleSubmit}>
+                <label className={style.label}>
                 Name
                 <input
-                    className={styles.input}
+                    className={style.input}
                     type="text"
                     name="name"
                     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -57,13 +58,14 @@ export default function Form () {
                     required
                     value={name}
                     onChange={handleChange}
+                    // id={nameInputId}
                 />
                 </label>
 
-                <label className={styles.label}>
+                <label className={style.label}>
                 Number
                 <input
-                    className={styles.input}
+                    className={style.input}
                     type="tel"
                     name="number"
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -71,10 +73,12 @@ export default function Form () {
                     required
                     value={number}
                     onChange={handleChange}
+                    // id={numberInpntId}
                 />
                 </label>
 
-                <button className={styles.btn} type="submit">Add contact</button>
+                <button className={style.btn} typy="submit">Add contact</button>
             </form>
         )
     }
+

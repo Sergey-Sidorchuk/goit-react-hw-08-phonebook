@@ -1,7 +1,13 @@
+/* HomeView */
 .container {
+  margin-top: 20px;
+  background-image: url(../images/111.png);
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 720px;
 }
 .title {
   font-weight: 500;
@@ -9,6 +15,7 @@
   text-align: center;
 }
 
+/* RegisterView & LoginView*/
 .form {
   width: 320px;
 }
