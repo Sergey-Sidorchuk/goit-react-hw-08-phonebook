@@ -10,6 +10,8 @@ export default function Form() {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     
+
+
     const handleChange = event => {
         const { name, value } = event.currentTarget;
 

@@ -10,7 +10,7 @@ const Loader = () => {
             className="border-solid animate-spin  rounded-full border-blue-400 border-8 h-20 w-20"
             />
             
-            ... Loading
+            ...please wait, loading in progress
         </div>
     );
 }

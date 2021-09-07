@@ -7,7 +7,7 @@ import contactsSelector from '../../redux/contacts/selectors';
 import Form from '../Form';
 import Filter from '../Filter';
 import Contacts from '../Contacts';
-import Loader from '../Loader';
+import Loader from '../Loader/Loader';
 import styles from './Phonebook.module.css'
 
 export default function Phonebook() {
@@ -23,7 +23,7 @@ export default function Phonebook() {
             <h1>Phonebook</h1>
             <Form />
 
-            {isLoading ? (
+            {{ isLoading } ? (
                 <>
                     <h2>Contacts</h2>
                     <Filter />

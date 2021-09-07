@@ -9,14 +9,14 @@ const Filter = () => {
 
     const onChange = event => dispatch(filterContact(event.target.value));
 
+    return (
+        <label className={styles.label}>
+            Find contacts by name
+            <input className={styles.input} type="text" onChange={onChange} value={filter} name="filter" />
+        </label>
 
-return (
-
-    <label className={styles.label}>Find contacts by name
-        <input className={styles.input} type="text"  onChange={onChange} value={filter} name ="filter" />
-    </label>
-
-)
+    )
+    
 };
 
 export default Filter;
