@@ -4,7 +4,7 @@ import UserMenu from '../UserMenu';
 import AuthNav from '../AuthNav';
 import { authSelectors } from '../../redux/auth';
 
-import styles from './AppBar.module.css'
+import styles from './AppBar.module.css';
 
 export default function AppBar() {
     const isAuthenticated = useSelector(authSelectors.getIsLoggedIn);
@@ -12,7 +12,6 @@ export default function AppBar() {
     return (
     <header className={styles.header}>
         <Navigation />
-        
             {isAuthenticated ? <UserMenu /> : <AuthNav />}
     </header>
     );

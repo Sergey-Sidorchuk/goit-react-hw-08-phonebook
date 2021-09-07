@@ -6,14 +6,13 @@ import styles from './Navigation.module.css';
 
 export default function Navigation() {
     const isAuthenticated = useSelector(authSelectors.getIsLoggedIn);
-    return ( 
+    return (
         <nav>
             <NavLink
                 to="/"
                 exact
-                className={styles.link}
-                activeClassName={styles.activeLink}
-            >
+                 className={styles.link}
+                activeClassName={styles.activeLink}>
                 Home page
             </NavLink>
 
@@ -29,5 +28,4 @@ export default function Navigation() {
             )}
         </nav>
     )};
-
 

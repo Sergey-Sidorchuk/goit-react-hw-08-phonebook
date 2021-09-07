@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
-import defaultAvatar from './default-avatar.png';
+import defaultAvatar from './defaultAvatar.png';
 import styles from './UserMenu.module.css';
 
 export default function UserMenu() {

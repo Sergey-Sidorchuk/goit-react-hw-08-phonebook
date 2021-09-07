@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import contactsOperations from '../../redux/contacts/operation';
 import contactsSelectors from '../../redux/contacts/selectors';
-import style from './Form.module.css'
+import style from './Form.module.css';
 
 export default function Form() {
     const dispatch = useDispatch();
@@ -10,8 +10,6 @@ export default function Form() {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     
-    // console.log(contacts);
-
     const handleChange = event => {
         const { name, value } = event.currentTarget;
 
@@ -58,7 +56,6 @@ export default function Form() {
                     required
                     value={name}
                     onChange={handleChange}
-                    // id={nameInputId}
                 />
                 </label>
 
@@ -73,12 +70,10 @@ export default function Form() {
                     required
                     value={number}
                     onChange={handleChange}
-                    // id={numberInpntId}
                 />
                 </label>
 
-                <button className={style.btn} typy="submit">Add contact</button>
+                <button className={style.btn} type="submit">Add contact</button>
             </form>
         )
     }
-

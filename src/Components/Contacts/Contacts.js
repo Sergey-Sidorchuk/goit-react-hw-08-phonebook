@@ -4,6 +4,7 @@ import {contactsOperations, contactsSelectors } from '../../redux/contacts';
 import Contact from '../Contact/Contact';
 import style from './Contacts.module.css'
 
+
 const Contacts = () => {
     const dispatch = useDispatch();
     const contacts = useSelector(contactsSelectors.getVisibleContacts);

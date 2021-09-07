@@ -19,14 +19,11 @@ const fetchContacts = () => async dispatch => {
         const { data } = await axios.get('/contacts');
 
         dispatch(fetchContactSuccess(data));
-    } catch (error) {
+    }
+    catch (error) {
         dispatch(fetchContactError(error));
     }
 
-    // axios
-    //     .get('/contacts')
-    //     .then(({ data }) => dispatch(fetchContactSuccess(data)))
-    //     .catch(error => dispatch(fetchContactError(error)));
 };
 
 const addContact = ({ name, number }) => async dispatch => {
@@ -41,14 +38,12 @@ const addContact = ({ name, number }) => async dispatch => {
         const { data } = await axios.post(`/contacts`, contact);
 
         dispatch(addContactSuccess(data));
-    } catch (error) {
+    }
+    catch (error) {
         dispatch(addContactError(error));
     }
 
-    // axios
-    //     .post('/contacts', contact)
-    //     .then(({ data }) => dispatch(addContactSuccess(data)))
-    //     .catch(error => dispatch(addContactError(error)));
+   
 };
 
 const deleteContact = contactId => async dispatch => {
@@ -61,10 +56,6 @@ const deleteContact = contactId => async dispatch => {
         dispatch(deleteContactError(error));
     }
 
-    // axios
-    //     .delete(`/contacts/${contactId}`)
-    //     .then(() => dispatch(deleteContactSuccess(contactId)))
-    //     .catch(error => dispatch(deleteContactError(error)));
 };
 
 const contactsOperations = {

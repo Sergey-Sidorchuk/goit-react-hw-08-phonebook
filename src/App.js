@@ -47,7 +47,6 @@ export default function App() {
                 <ContactsView />
               </PrivateRoute>
               
-
             </Suspense>
 
           </Switch>
