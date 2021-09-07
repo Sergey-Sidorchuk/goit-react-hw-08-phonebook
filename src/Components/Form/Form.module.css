@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   border: 1px solid rgb(6, 83, 250);
-  background-color: rgb(238, 238, 241);
+  background-color: hsl(190, 100%, 99%);
 }
 
 .label {
@@ -32,6 +32,7 @@
   background-color: rgb(219, 253, 175);
 }
 
-.btn:hover {
-  background-color: rgba(129, 129, 129, 0.3);
+.btn:hover,
+.btn:focus {
+  background-color: rgb(170, 253, 16);
 }
